@@ -147,7 +147,7 @@ GOOGLE_MAP_API_KEY="AIzaSyDtJpZDAwHU0kRTSdkwQZwTFWQP6p8oRFM"
 
 FIREBASE_ADMIN_CREDENTIAL = os.path.join(BASE_DIR, "pickngo-340506-firebase-adminsdk-vvo1b-f56ccdc3c9.json")
 
-NOTIFICATION_URL="https://immense-plains-40492.herokuapp.com/"
+NOTIFICATION_URL="https://morning-peak-82205.herokuapp.com/"
 
 ASGI_APPLICATION = "fastparcel.asgi.application"
 
