@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Courier | Pick&GO</title>
+
+        {% load bootstrap4 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript jquery='full' %}
+
+        {% include 'load_firebase.html' %}
+
+        <script>
+          const messaging = firebase.messaging();
+          messaging
+            .getToken({
+              validKey: "BItkKoeIe3mevn3GRjKo1OWM0skO62Bvx1YVDCsaABH7CqJaImb3qaZSVAJxNPJNa-5vgApTiJS9bvDKkI9OHKs"
+            })
+            .then((currentToken) => {
+              console.log(currentToken);
+              if (currentToken) {
+                fetch('{% url "courier:fcm_token_update_api" %}?fcm_token=' + currentToken);
+              }
+            })
+            .catch((err) => {
+              console.log('An error occured while retrieving token. ', err);
+            })
+        </script>
+      
+
+        <script>
+          let vh = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty('--vh', `${vh}px`);
+        </script>
+      
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+
+        <style>
+          #content {
+            height: calc(var(--vh, 1vh) * 100);
+          }
+        </style>
+
+        {% block head %}{% endblock %}
+
+    </head>
+<body>
+<div id="content">
+      {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>

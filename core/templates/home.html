@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+  <div class="row">
+
+  <div class="col-lg-12">
+    <h1 class="text-center mt-5 mb-5">Welcome to Pick & Go</h1>
+  </div>
+
+  <div class="col-lg-6 mb-4">
+    <div class="card">
+      <!--<img src="..." class="card-img-top" alt="...">-->
+      <div class="card-body">
+        <h5 class="card-title">Customer</h5>
+        <p class="card-text">Customer Login Page.</p>
+        <a href="{% url 'customer:home' %}" class="btn btn-warning">Details</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6 mb-4">
+    <div class="card">
+      <!--<img src="..." class="card-img-top" alt="...">-->
+      <div class="card-body">
+        <h5 class="card-title">Courier</h5>
+        <p class="card-text">Courier Login Page.</p>
+        <a href="{% url 'courier:home' %}" class="btn btn-warning">Details</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+{% endblock %}
